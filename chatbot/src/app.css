@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+.layout-header {
+  @apply fixed top-0 right-0 w-10/12 float-right h-16 bg-transparent flex items-center justify-between px-4 z-10;
+}
+
+.layout-container {
+  @apply flex flex-row items-center justify-center max-w-full h-screen;
+}
+
+.layout-sidebar {
+  @apply flex-2/12 top-0 left-0 w-64 h-full bg-[#181818] flex flex-col items-center p-4 z-20;
+}
+
+.layout-sidebar-header {
+  @apply flex items-center justify-center w-full h-16 mb-4 text-white text-lg font-bold;
+}
+
+.layout-sidebar-content {
+  @apply flex-1 flex flex-col items-center justify-start w-full h-full overflow-y-auto border;
+}
+
+.layout-content {
+  @apply flex-10/12 flex flex-col items-center justify-center w-full h-full;
+}
+
+.layout-content-note {
+  @apply my-2 text-center text-[#515151] text-sm m-0 p-0;
+}
+
+.chatbot-container {
+  @apply flex flex-col items-center justify-between w-full h-full;
+}
+
+.chatbot-body {
+  @apply flex flex-col  h-full w-full overflow-y-auto px-64 py-16;
+}
+
+.chatbot-message {
+  @apply mb-4 p-5 my-6 rounded-2xl break-words max-w-full;
+}
+
+.chatbot-message pre {
+  @apply text-[#f8f8f2] p-0 rounded-lg overflow-x-auto font-mono text-sm my-2;
+}
+
+.chatbot-message code {
+  @apply px-1 py-0.5 rounded font-mono text-sm;
+}
+
+.typing-indicator {
+  @apply opacity-[o.6] animate-pulse;
+}
+
+.chatbot-input {
+  @apply w-full p-8 mx-64 rounded-2xl shadow-lg bg-[#2a2a2a] border-none outline-none;
+}
