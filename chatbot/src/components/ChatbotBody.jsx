@@ -2,7 +2,7 @@ import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
+import "../styles/chatbot.css"
 
 export default function ChatbotBody({ messages, isTyping }) {
     return (
@@ -11,8 +11,8 @@ export default function ChatbotBody({ messages, isTyping }) {
                 <div
                     key={index}
                     className={`chatbot-message ${message.role === "user"
-                        ? "self-end bg-[#303030]"
-                        : "self-start bg-transparent"
+                        ? "user"
+                        : "assistant"
                         }`}
                 >
                     <ReactMarkdown

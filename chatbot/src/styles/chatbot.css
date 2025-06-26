@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+.chatbot-container {
+  @apply flex flex-col items-center justify-between w-full h-full;
+}
+
+.chatbot-body {
+  @apply flex flex-col  h-full w-full overflow-y-auto px-64 py-16;
+}
+
+.chatbot-message {
+  @apply mb-4 my-6 rounded-2xl break-words max-w-full ;
+}
+
+.chatbot-message.user {
+  @apply self-end p-5 bg-[#303030];
+}
+
+.chatbot-message.assistant {
+  @apply self-start w-full p-0;
+}
+
+.chatbot-message pre {
+  @apply mb-8;
+}
+
+.chatbot-message code {
+  @apply bg-[#424242] p-1 rounded-md;
+}
+
+.typing-indicator {
+  @apply opacity-[o.6] animate-pulse;
+}
+
+.chatbot-input {
+  @apply w-full p-8 mx-64 rounded-2xl shadow-lg bg-[#2a2a2a] border-none outline-none;
+}

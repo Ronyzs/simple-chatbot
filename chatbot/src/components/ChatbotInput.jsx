@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/chatbot.css"
 
 export default function ChatbotInput({ sendMessageWithStream, setMessages, messages, setTyping }) {
     const [input, setInput] = useState("");
@@ -6,6 +7,7 @@ export default function ChatbotInput({ sendMessageWithStream, setMessages, messa
     return (
         <input
             className="chatbot-input"
+            placeholder="Ask anything"
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}

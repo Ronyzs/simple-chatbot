@@ -11,13 +11,3 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-/* Misalnya di index.css (tidak wajib) */
-.hljs {
-  @apply bg-transparent text-inherit;
-}
-
-.hljs-comment,
-.hljs-quote {
-  @apply text-gray-500 italic;
-}

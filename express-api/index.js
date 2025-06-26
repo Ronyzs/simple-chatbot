@@ -16,6 +16,11 @@ app.get('/', (req, res) => {
 
 // Main route
 app.post('/api/chat', async (req, res) => {
+  // Return error if no model set in environment
+  if (!process.env.LLM_MODEL) {
+    return res.status(400).json({ error: 'Model is not set in environment' });
+  }
+
   // Simple RAG (Retrieval-Augmented Generation)
   // Add a system message to restrict the language
   const systemPrompt = {
@@ -24,20 +29,22 @@ app.post('/api/chat', async (req, res) => {
   };
 
   const requestPrompt = {
-    model: "llama3:70b",
+    model: process.env.LLM_MODEL,
     messages: [systemPrompt, ...req.body.messages],
     stream: true
   };
 
   try {
+    const HOST = process.env.HOST_URL || 'http://localhost:11434';
     const response = await axios.post(
-      process.env.HOST_URL + '/api/chat',
+      HOST + '/api/chat',
       requestPrompt,
       {
-        auth: {
-          username: process.env.BASIC_AUTH_USER,
-          password: process.env.BASIC_AUTH_PASS
-        },
+        // Uncomment the following lines if you need basic authentication
+        // auth: {
+        //   username: process.env.BASIC_AUTH_USER,
+        //   password: process.env.BASIC_AUTH_PASS
+        // },
         responseType: 'stream'
       }
     );

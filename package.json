@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "npm-run-all --parallel dev:client dev:server",
     "dev:client": "cd chatbot && npm run dev",
-    "dev:server": "cd express-api && npm run dev"
+    "dev:server": "cd express-api && npm run dev",
+    "install:all": "npm install && cd chatbot && npm install && cd ../express-api && npm install"
   },
   "keywords": [],
   "author": "",
